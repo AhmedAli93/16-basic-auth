@@ -6,9 +6,13 @@
   "directories": {
     "lib": "lib"
   },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "coverage": "DEBUG='cfgram*' jest --coverage",
+    "test": "DEBUG='cfgram*' jest",
+    "start": "DEBUG='cfgram*' node server.js",
     "eslint": "lint"
   },
   "keywords": [],
