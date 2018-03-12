@@ -43,10 +43,8 @@ describe('Auth Routes', function() {
           });
       });
     });
-    
     it('return a 400 error', done => {
       request.post(`${url}/api/signup`)
-        .send({})
         .end((err, res) => {
           expect(res.status).toEqual(400);
           done();

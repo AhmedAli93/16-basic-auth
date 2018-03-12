@@ -1,6 +1,7 @@
 'use strict';
 
 const jsonParser = require('body-parser').json();
+const createError = require('http-errors');
 const debug = require('debug')('cfgram:auth-router');
 const Router = require('express').Router;
 const basicAuth = require('../lib/basic-auth-middleware.js');
@@ -10,7 +11,10 @@ const authRouter = module.exports = Router();
 
 authRouter.post('/api/signup', jsonParser, function(req, res, next) {
   debug('POST: /api/signup');
-
+  if(!req.body.username || !req.body.email || !req.body.password){
+    return next(createError(400, 'need to send valid body'));
+  }
+  console.log('body:', req.body);
   let password = req.body.password;
   delete req.body.password;
 
