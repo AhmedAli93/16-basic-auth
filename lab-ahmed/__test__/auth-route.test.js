@@ -48,7 +48,7 @@ describe('Auth Routes', function() {
       request.post(`${url}/api/signup`)
         .send({})
         .end((err, res) => {
-          expect(res.status).toEqual(400);
+          expect(res.status).toEqual(500);
           done();
         });
     });
@@ -74,7 +74,7 @@ describe('Auth Routes', function() {
           .catch(done);
       });
 
-      it('should return a token', done => {
+      it('should return a 200', done => {
         request.get(`${url}/api/signin`)
           .auth('exampleuser', '1234')
           .end((err, res) => {
@@ -85,7 +85,7 @@ describe('Auth Routes', function() {
           });
       });
       
-      it('return 401 error', done => {
+      it('return 401', done => {
         request.get(`${url}/api/signin`)
           .end((err, res) => {
             expect(res.status).toEqual(401);

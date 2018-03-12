@@ -11,9 +11,9 @@
   },
   "scripts": {
     "coverage": "DEBUG='cfgram*' jest --coverage",
-    "test": "DEBUG='cfgram*' jest",
+    "test": "DEBUG='cfgram*' jest -i",
     "start": "DEBUG='cfgram*' node server.js",
-    "eslint": "lint"
+    "lint": "eslint"
   },
   "keywords": [],
   "author": "",

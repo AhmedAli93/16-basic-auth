@@ -1,7 +1,6 @@
 'use strict';
 
 const request = require('superagent');
-const mongoose = require('mongoose');
 const server = require('../server.js');
 const serverToggle = require('../lib/server-toggle.js');
 
