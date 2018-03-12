@@ -7,9 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "eslint": "lint"
+    "test": "DEBUG='cfgram*' jest",
+    "start": "DEBUG='cfgram*' node server.js"
   },
   "keywords": [],
   "author": "",
