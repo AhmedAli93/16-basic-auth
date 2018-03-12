@@ -52,7 +52,6 @@ describe('Auth Routes', function() {
     });
   });
 
-
   describe('GET: /api/signin', function() {
     describe('with a valid body', function() {
       beforeEach( done => {
